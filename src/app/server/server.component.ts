@@ -6,5 +6,8 @@ import { Component } from "@angular/core";
 })
 
 export class ServerComponent {
-
+    // you can use TS and set the type
+    serverId: number = 10;
+    // or you don't have to
+    serverStatus = 'offline';
 }
