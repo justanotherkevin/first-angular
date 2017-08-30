@@ -1,6 +1,3 @@
-<app-server></app-server>
-<app-server></app-server>
-<hr><hr>
 <!-- property binding for disable button; property binding use [] -->
 <!-- it need to be a string, because Angular evalurate things in string  -->
 <button
@@ -34,4 +31,6 @@
     [(ngModel)]="inputValue"
 />
 <p>{{ inputValue }}</p>
+<hr><hr>
+<app-server *ngFor = "let server of servers" ></app-server>
 <hr><hr>
