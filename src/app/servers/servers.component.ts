@@ -13,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreateStatus = "No Server Created";
+  inputValue = "one or two way binding";
+  serverCreated = false;
 
   constructor() {
     setTimeout( () => {
@@ -24,7 +26,11 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreateStatus = "New Server Created";
   }
 
+  onUpdateInputField( event: Event ) {
+    this.inputValue = (<HTMLInputElement>event.target).value;
+  }
 }

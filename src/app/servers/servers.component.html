@@ -1,15 +1,37 @@
 <app-server></app-server>
-<hr>
 <app-server></app-server>
-<hr>
+<hr><hr>
 <!-- property binding for disable button; property binding use [] -->
 <!-- it need to be a string, because Angular evalurate things in string  -->
 <button
     class="btn btn-primary"
     [disabled]="!allowNewServer"
-    (click)="onCreateServer()" > Add SERVER</button>
+    (click)="onCreateServer()" >
+    Add SERVER
+</button>
+<!-- EVENT BINDING; use () -->
+<!-- *ngIf, the * is for structure directive. it change the DOM -->
+<p *ngIf="serverCreated">this is the server p-tag {{ serverCreateStatus }} server name {{ inputValue }}</p>
 <!-- two way to do the samething -->
 <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p>
-<!-- EVENT BINDING; use () -->
-<p>{{ serverCreateStatus }}</p>
+<hr><hr>
+<!-- one way binding event -->
+<label>label for server name</label>
+<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateInputField($event)"
+/>
+<p>{{ inputValue }}</p>
+<hr><hr>
+<!-- TWO way binding event -->
+<!-- using [()] -->
+<label>label for input</label>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="inputValue"
+/>
+<p>{{ inputValue }}</p>
+<hr><hr>
